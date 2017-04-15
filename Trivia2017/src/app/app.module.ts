@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Vibration } from '@ionic-native/vibration';
 import { Flashlight } from '@ionic-native/flashlight';
+import { AngularFireModule } from 'angularfire2';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -12,6 +13,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyA1rHekUrgssgismTU39tTK7GelEeyh2FY",
+    authDomain: "trivia2017-ed94e.firebaseapp.com",
+    databaseURL: "https://trivia2017-ed94e.firebaseio.com",
+    projectId: "trivia2017-ed94e",
+    storageBucket: "trivia2017-ed94e.appspot.com",
+    messagingSenderId: "609382919586"
+};
 
 
 @NgModule({
@@ -24,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,6 +50,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     Vibration,
     Flashlight,
+    AngularFireModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
