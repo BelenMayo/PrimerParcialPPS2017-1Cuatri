@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h1>Menu de login</h1>
+<p>
+<input type="text" [(ngModel)] = "user.usuario" > Ingrese Usuario
+</p>
+<p>
+<input type="password" [(ngModel)] = "user.clave" > Ingrese Clave
+</p>
+<input type="submit" (click) ="GetDatos()" value="Login">
+
+
+
+</ion-content>

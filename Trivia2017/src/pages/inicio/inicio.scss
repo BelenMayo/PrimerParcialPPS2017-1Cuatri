@@ -1,0 +1,36 @@
+page-home {
+
+
+h1, h2, h3 {
+  align-content: center;
+  text-align: center;
+}
+
+
+
+input[type=text] {
+  border: 2px solid red;
+  border-radius: 4px;
+   top:120px;
+    right:650px;
+    width: 220px;
+    height: 30px;
+    position: absolute;
+     text-align: center;
+     display:inline-block;
+}
+
+input[type=submit] {
+  border: 2px solid red;
+  border-radius: 4px;
+   top:170px;
+    right: 650px;
+    width: 220px;
+    height: 30px;
+    position: absolute;
+}
+
+
+
+
+}
