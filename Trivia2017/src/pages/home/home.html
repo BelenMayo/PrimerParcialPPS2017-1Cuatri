@@ -15,16 +15,30 @@
 
 <ion-content>
   <ion-list>
+
     <ion-item-sliding *ngFor='let task of tasks | async'>
       <ion-item>
         <ion-label>{{ task.title }}</ion-label>
         <ion-checkbox (ionChange)="updateTask( task )" [(ngModel)]="task.done"></ion-checkbox>
       </ion-item>
-       <ion-item-options>
+       <ion-item>
         <button ion-button danger (click)="removeTask( task )">
           Delete
         </button>
-       </ion-item-options>
+       </ion-item>
     </ion-item-sliding>
   </ion-list>
+  
+        <button ion-button danger (click)="vibrar()">
+          Vibración
+        </button>
+
+        <button ion-button danger (click)="detenerVibrar()">
+          Detener Vibración
+        </button>
+
+        <button ion-button danger (click)="pasarPantalla()">
+          Comenzar Trivia
+        </button>
+
 </ion-content>

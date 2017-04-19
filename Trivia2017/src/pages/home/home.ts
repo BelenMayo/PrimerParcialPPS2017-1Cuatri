@@ -3,6 +3,10 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { FirebaseListObservable, AngularFireDatabase  } from 'angularfire2';
+import { Vibration } from '@ionic-native/vibration';
+
+import { TriviaUno } from '../trivia1/trivia1'
+
 
 @Component({
   selector: 'page-home',
@@ -15,7 +19,8 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public alertCtrl: AlertController,
-    public database: AngularFireDatabase
+    public database: AngularFireDatabase,
+    private vibration: Vibration
   ) {
     this.tasks = this.database.list('/tasks')
   }
@@ -62,5 +67,17 @@ export class HomePage {
 
   removeTask( task ){
     this.tasks.remove( task );
+  }
+
+  vibrar(){
+    this.vibration.vibrate(3000);
+  }
+
+  detenerVibrar(){
+    this.vibration.vibrate(0);
+  }
+
+  pasarPantalla(){
+        this.navCtrl.push(TriviaUno);
   }
 }

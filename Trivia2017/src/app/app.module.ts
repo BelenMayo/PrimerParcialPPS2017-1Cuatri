@@ -11,6 +11,9 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { TriviaUno } from '../pages/trivia1/trivia1';
+import { TriviaDos } from '../pages/trivia2/trivia2';
+import { TriviaTres } from '../pages/trivia3/trivia3';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,6 +36,9 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     LoginPage,
+    TriviaUno,
+    TriviaDos,
+    TriviaTres,
     TabsPage
   ],
   imports: [
@@ -47,6 +53,9 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     TabsPage,
+    TriviaUno,
+    TriviaDos,
+    TriviaTres,
     LoginPage
   ],
   providers: [
