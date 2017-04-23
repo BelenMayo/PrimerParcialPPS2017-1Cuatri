@@ -1,3 +1,18 @@
+<style>
+  .title-font {
+  color:darkslateblue; 
+  font-size: 28px; 
+  font-family: 'Signika', sans-serif; 
+  padding-bottom: 10px; ;
+  }
+  .button-inner {
+  flex-flow: column;
+ }
+  .button-color {
+  background-color:darkslateblue;
+  }
+</style>
+
 <ion-header>
   <ion-navbar  color="primary">
     <ion-title>
@@ -7,15 +22,20 @@
 </ion-header>
 
 <ion-content padding>
-        <button ion-button danger (click)="pasarPregunta()">
-          Respuesta 1
+        <ion-item>
+        <label class= "title-font">¿De que color <br> es el camaleón?</label>
+       </ion-item>
+
+        <button class="button-inner button-color"  ion-button danger (click)="pasarPregunta()">
+          Rojo
         </button>
 
-        <button ion-button danger (click)="pasarPregunta()">
-          Respuesta 2
+        <button class="button-inner button-color"  ion-button danger (click)="pasarPregunta()">
+          Verde
         </button>
 
-        <button ion-button danger (click)="pasarPregunta()">
-          Respuesta 3
+        <button class="button-inner button-color"  ion-button danger (click)="pasarPregunta()">
+          Cambia de color
         </button>
 </ion-content>
+

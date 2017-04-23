@@ -11,12 +11,15 @@ import { TriviaDos } from '../trivia2/trivia2'
 })
 export class TriviaUno {
 
-  Pregunta1: FirebaseListObservable<any>;
+  pregunta1: FirebaseListObservable<any>;
+  pregunta: string= "";
 
   constructor(public navCtrl: NavController, private vibration: Vibration, public database: AngularFireDatabase,) {
-    this.Pregunta1 = this.database.list('/Pregunta1')
+    this.pregunta1 = this.database.list('/Pregunta1')
 
-    this.Pregunta1.subscribe(console.log);
+    this.pregunta = this.pregunta;
+
+    this.pregunta1.subscribe(console.log);
   }
 
   //updateTask( task ){

@@ -1,3 +1,18 @@
+<style>
+  .title-font {
+  color: salmon; 
+  font-size: 28px; 
+  font-family: 'Signika', sans-serif; 
+  padding-bottom: 10px; ;
+  }
+  .button-inner {
+  flex-flow: column;
+  }
+  .button-color {
+  background-color:salmon;
+  }
+</style>
+
 <ion-header>
   <ion-navbar  color="primary">
     <ion-title>
@@ -7,29 +22,19 @@
 </ion-header>
 
 <ion-content padding>
-
-    <ion-list>
-
-    <ion-item-sliding *ngFor='let Preg of Pregunta1 | async'>{{ Preg.Pregunta }}
-      <ion-item>
-        <ion-label>{{ Preg.Pregunta }}</ion-label>
-        <!--<ion-checkbox (ionChange)="updateTask( task )" [(ngModel)]="task.done"></ion-checkbox>-->
+        <ion-item class= "title-font">
+        ¿Cuál el es mejor <br> amigo del hombre?
       </ion-item>
-    </ion-item-sliding>
-  </ion-list>
 
-      <!--<button ion-button danger (click)="pasarPregunta()">
-           {{ Pregunta1.Respuestas.Respuesta1 }}
-      </ion-item>
+        <button class="button-inner  button-color" ion-button danger (click)="pasarPregunta()">
+          Perro
         </button>
 
-      <button ion-button danger (click)="pasarPregunta()">
-           {{ Pregunta1.Respuestas.Respuesta2 }}
-      </ion-item>
+        <button class="button-inner  button-color" ion-button danger (click)="pasarPregunta()">
+          Caballo
         </button>
 
-      <button ion-button danger (click)="pasarPregunta()">
-          {{ Pregunta1.Respuestas.Respuesta3 }}
-      </ion-item>
-        </button>-->
+        <button class="button-inner  button-color" ion-button danger (click)="pasarPregunta()">
+          Gato
+        </button>
 </ion-content>
