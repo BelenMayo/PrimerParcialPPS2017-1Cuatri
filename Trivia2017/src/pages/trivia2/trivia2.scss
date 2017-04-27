@@ -1,3 +1,17 @@
-page-about {
-
+page-pregunta2{
+  .back-color {
+  background-color:#FEDFF8;
+  }
+  .title-font {
+  color: salmon; 
+  font-size: 28px; 
+  font-family: 'Signika', sans-serif; 
+  padding-bottom: 10px; ;
+  }
+  .button-inner {
+  flex-flow: column;
+  }
+  .button-color {
+  background-color:salmon;
+  }
 }

@@ -1,40 +1,25 @@
-<style>
-  .title-font {
-  color:darkolivegreen; 
-  font-size: 28px; 
-  font-family: 'Signika', sans-serif; 
-  padding-bottom: 10px; ;
-  }
-  .button-inner {
-  flex-flow: column;
- }
-  .button-color {
-  background-color:darkolivegreen;
-  }
-</style>
-
 <ion-header>
-  <ion-navbar  color="primary">
+  <ion-navbar color="pink">
     <ion-title>
       Pregunta 2
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-        <ion-item class= "title-font">
-        ¿Cuántas patas <br> tiene una araña?
+<ion-content class="back-color" padding>
+        <ion-item class= "title-font back-color">
+        <strong>¿Cuántas patas <br> tiene una araña?</strong>
        </ion-item>
 
-        <button class="button-inner button-color" ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion1" value="10" ion-button danger (click)="pasarPregunta('10')">
           10
         </button>
 
-        <button class="button-inner button-color"  ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion2" value="8" ion-button danger (click)="pasarPregunta('8')">
           8
         </button>
 
-        <button class="button-inner button-color"  ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion3" value="12" ion-button danger (click)="pasarPregunta('12')">
           12
         </button>
 </ion-content>

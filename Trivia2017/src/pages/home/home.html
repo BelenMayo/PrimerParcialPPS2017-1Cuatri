@@ -1,44 +1,20 @@
-
-
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
       Trivia
     </ion-title>
-    <ion-buttons start>
-      <button ion-button (click)="createTask()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
 
-    <ion-item-sliding *ngFor='let task of tasks | async'>
-      <ion-item>
-        <ion-label>{{ task.title }}</ion-label>
-        <ion-checkbox (ionChange)="updateTask( task )" [(ngModel)]="task.done"></ion-checkbox>
-      </ion-item>
-       <ion-item>
-        <button ion-button danger (click)="removeTask( task )">
-          Delete
-        </button>
-       </ion-item>
-    </ion-item-sliding>
-  </ion-list>
-  
-        <button ion-button danger (click)="vibrar()">
-          Vibración
-        </button>
 
-        <button ion-button danger (click)="detenerVibrar()">
-          Detener Vibración
-        </button>
+<ion-content class="back-color" padding>
+        <ion-item class= "title-font back-color">
+        <strong>Bienvenido!!</strong>
+        </ion-item>
 
-        <button ion-button danger (click)="pasarPantalla()">
-          Comenzar Trivia
-        </button>
+       <button class="button-inner  button-color" ion-button danger (click)="pasarPregunta()">
+          Jugar
+      </button>
 
 </ion-content>

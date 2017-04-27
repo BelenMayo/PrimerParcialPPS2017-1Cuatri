@@ -1,40 +1,25 @@
-<style>
-  .title-font {
-  color:darkslateblue; 
-  font-size: 28px; 
-  font-family: 'Signika', sans-serif; 
-  padding-bottom: 10px; ;
-  }
-  .button-inner {
-  flex-flow: column;
- }
-  .button-color {
-  background-color:darkslateblue;
-  }
-</style>
-
 <ion-header>
-  <ion-navbar  color="primary">
+  <ion-navbar color="pink">
     <ion-title>
       Pregunta 3
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-        <ion-item>
-        <label class= "title-font">¿De que color <br> es el camaleón?</label>
+<ion-content class="back-color" padding>
+        <ion-item class="title-font back-color">
+          <strong>¿De que color <br> es el camaleón?</strong>
        </ion-item>
 
-        <button class="button-inner button-color"  ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion1" value="rojo" ion-button danger (click)="pasarPregunta('rojo')">
           Rojo
         </button>
 
-        <button class="button-inner button-color"  ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion2" value="verde" ion-button danger (click)="pasarPregunta('verde')">
           Verde
         </button>
 
-        <button class="button-inner button-color"  ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion3" value="cambia de color" ion-button danger (click)="pasarPregunta('cambia de color')">
           Cambia de color
         </button>
 </ion-content>

@@ -1,40 +1,25 @@
-<style>
-  .title-font {
-  color: salmon; 
-  font-size: 28px; 
-  font-family: 'Signika', sans-serif; 
-  padding-bottom: 10px; ;
-  }
-  .button-inner {
-  flex-flow: column;
-  }
-  .button-color {
-  background-color:salmon;
-  }
-</style>
-
 <ion-header>
-  <ion-navbar  color="primary">
+  <ion-navbar color="pink">
     <ion-title>
       Pregunta 1
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-        <ion-item class= "title-font">
-        ¿Cuál el es mejor <br> amigo del hombre?
-      </ion-item>
+<ion-content class="back-color" padding>
+        <ion-item class= "title-font back-color">
+        <strong>¿Cuál el es mejor <br> amigo del hombre?</strong>
+        </ion-item>
 
-        <button class="button-inner  button-color" ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion1" value="perro" ion-button danger (click)="pasarPregunta('perro')">
           Perro
         </button>
 
-        <button class="button-inner  button-color" ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion2"value="caballo" ion-button danger (click)="pasarPregunta('caballo')">
           Caballo
         </button>
 
-        <button class="button-inner  button-color" ion-button danger (click)="pasarPregunta()">
+        <button class="button-inner button-color" id="opcion3" value="gato" ion-button danger (click)="pasarPregunta('gato')">
           Gato
         </button>
 </ion-content>

@@ -1,11 +1,22 @@
 <ion-header>
-  <ion-navbar  color="primary">
+  <ion-navbar color="">
     <ion-title>
       Estadísticas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="back-color" padding>
+      <ion-item class= "title-font back-color">
+        <strong>Resultados</strong>
+      </ion-item>
+
+      <ion-item class= "back-color">
+        <strong>Acertaste {{contador}} de 3 preguntas</strong>
+      </ion-item>
+
+      <button class="button-inner  button-color" ion-button danger (click)="volverAJugar()">
+          Volver a jugar!!
+      </button>
 
 </ion-content>
