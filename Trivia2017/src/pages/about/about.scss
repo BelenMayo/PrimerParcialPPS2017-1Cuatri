@@ -1,20 +1,27 @@
 page-about {
   .back-color {
-  background-color:#EE9AE2;
+  background-color:#DFACD9;
   }
   .title-font {
-  color:#A71093; 
+  color:#841B78; 
   font-size: 28px; 
   font-family: 'Signika', sans-serif; 
-  padding-bottom: 10px; ;
+  padding-bottom: 10px;
   }
   .back-title {
-  background-color:#EE9AE2;
+  background-color:#DFACD9;
   }
   .button-inner {
   flex-flow: column;
   }
   .button-color {
   background-color:#660D5A; 
+  }
+  .resultados {
+  color:#220523; 
+  font-size: 22px; 
+  background-color:#DFACD9; 
+  padding-bottom: 25px;
+  padding-left: 30px;
   }
 }

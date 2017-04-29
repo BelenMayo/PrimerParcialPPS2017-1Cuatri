@@ -17,8 +17,8 @@ export class AboutPage {
     let contador = navParams.get('contador');
     this.contador = contador;
   
-    if(contador == null){
-      contador= 0;
+    if(this.contador == null){
+      this.contador= 0;
     }
   }
 
