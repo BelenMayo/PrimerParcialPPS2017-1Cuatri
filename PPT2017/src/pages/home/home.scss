@@ -1,3 +1,17 @@
 page-home {
-
+  .back-color {
+  background-color:#D8DBF4;
+  }
+  .title-font {
+  color: #1762DB; 
+  font-size: 28px; 
+  font-family: 'Signika', sans-serif; 
+  padding-bottom: 10px; ;
+  }
+  .button-inner {
+  flex-flow: column;
+  }
+  .button-color {
+  background-color:#1762DB;
+  }
 }
