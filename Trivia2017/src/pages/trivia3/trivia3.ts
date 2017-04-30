@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
 import * as $ from 'jquery'
 import { NavParams } from 'ionic-angular';
+import { FirebaseListObservable, AngularFireDatabase  } from 'angularfire2';
+
 
 import { AboutPage } from '../about/about'
 
@@ -13,29 +15,35 @@ import { AboutPage } from '../about/about'
 export class TriviaTres {
 
   contador: any = null;
-  respuesta: any= null;
+  usuario: any= null;
+  jugadas: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, private vibration: Vibration, private navParams: NavParams) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController,
+    public database: AngularFireDatabase, private vibration: Vibration, private navParams: NavParams) {
+    this.jugadas = this.database.list('/jugadas')
     let contador = navParams.get('contador');
-    let respuesta = navParams.get('respuesta');
+    let usuario = navParams.get('usuario');
     this.contador = contador;
-    this.respuesta = respuesta;
+    this.usuario = usuario;
   }
 
   pasarPregunta(valor){
 
+      this.jugadas.push({
+          jugada: valor,
+          usuario: this.usuario,
+      });
+
   if(valor != "cambia de color"){
     this.vibration.vibrate([200,100,200]);
-    this.respuesta= valor;
   } else {
     this.vibration.vibrate(300);
-    this.respuesta= valor;
     this.contador++;
   }
 
   this.navCtrl.push(AboutPage, {
       contador: this.contador,
-      respuesta: this.respuesta,
+      usuario: this.usuario,
     });
   }
 

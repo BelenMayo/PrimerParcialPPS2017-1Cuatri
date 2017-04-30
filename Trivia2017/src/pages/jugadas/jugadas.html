@@ -11,7 +11,14 @@
         <strong>Resultados</strong><br>
       </ion-item>
 
-      <strong class="resultados">{{respuesta}}</strong><br><br>
+        <ion-list>
+
+      <ion-item-sliding *ngFor='let task of tasks | async'>
+        <ion-item>
+          <ion-label>{{ jugada.title }}</ion-label>
+        </ion-item>
+      </ion-item-sliding>
+     </ion-list>
 
       <button class="button-inner  button-color2" ion-button danger (click)="volverAJugar()">
           Volver a jugar!!

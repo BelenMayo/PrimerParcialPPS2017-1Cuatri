@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import * as $ from 'jquery'
 
 import { TabsPage } from '../tabs/tabs'
 
@@ -10,18 +11,38 @@ import { TabsPage } from '../tabs/tabs'
 })
 export class LoginPage {
 
-usuario: string;
-clave: string;
-
-  constructor(public navCtrl: NavController) {  
+usuario: string= null;
+titulo: string= "Atención"
+mensaje:string= "Ingrese usuario y contraseña"
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {  
   
   }
 
 Login(){
-if(this.usuario != "" && this.clave != "")
+
+if($("#usuario").val() != "" && $("#clave").val() != "")
 {
-  this.navCtrl.push(TabsPage);
+  this.usuario= $("#usuario").val();
+
+  this.navCtrl.push(TabsPage, {
+      usuario: this.usuario,
+    });
+} else {
+  let ventana = this.alertCtrl.create({
+      title: this.titulo,
+      message: this.mensaje,
+      buttons:[
+        {
+          text: "Aceptar",
+          handler: data => {
+            console.log('Mensaje de Alerta');
+            }
+          }
+        ]
+
+      });
+      ventana.present(ventana);
+    }
 }
 
-}
 }

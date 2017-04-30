@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
+import { FirebaseListObservable, AngularFireDatabase  } from 'angularfire2';
 
 import { HomePage } from '../home/home';
 
@@ -12,13 +13,16 @@ import { HomePage } from '../home/home';
 export class Jugadas {
 
   contador: any = null;
-  respuesta: any= null;
+  usuario: any= null;
 
-  constructor(public navCtrl: NavController, private vibration: Vibration, private navParams: NavParams) {
+  jugadas: FirebaseListObservable<any>;
+
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController,
+    public database: AngularFireDatabase, private vibration: Vibration, private navParams: NavParams) {
     let contador = navParams.get('contador');
-    let respuesta = navParams.get('respuesta');
     this.contador = contador;
-    this.respuesta = respuesta;
+
+    this.jugadas = this.database.list('/jugadas')
 
     if(this.contador == null){
       this.contador= 0;

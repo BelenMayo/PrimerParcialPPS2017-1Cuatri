@@ -1,5 +1,5 @@
 
-
+import { NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { FirebaseListObservable, AngularFireDatabase  } from 'angularfire2';
@@ -15,16 +15,18 @@ import { TriviaUno } from '../trivia1/trivia1'
 })
 export class HomePage {
 
-  pregunta1: FirebaseListObservable<any>;
-  pregunta: string= "";
-    
-  constructor(public navCtrl: NavController, private vibration: Vibration, public database: AngularFireDatabase,) {
-    this.pregunta1 = this.database.list('/Pregunta1')
+  usuario: string= null;
+
+  constructor(public navCtrl: NavController, private vibration: Vibration, public database: AngularFireDatabase, 
+    private navParams: NavParams) {
+      let usuario = navParams.get('usuario');
+      this.usuario= "Fernando";
   }
 
   pasarPregunta(){
   this.vibration.vibrate(200);
-  this.navCtrl.push(TriviaUno);
+  this.navCtrl.push(TriviaUno, {
+      usuario: this.usuario,
+    });
   }
-
 }

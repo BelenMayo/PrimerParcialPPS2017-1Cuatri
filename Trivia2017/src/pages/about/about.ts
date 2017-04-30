@@ -13,13 +13,13 @@ import { Jugadas } from '../jugadas/jugadas';
 export class AboutPage {
 
   contador: any = null;
-  respuesta: any= null;
+  usuario: any= null;
 
   constructor(public navCtrl: NavController, private vibration: Vibration, private navParams: NavParams) {
     let contador = navParams.get('contador');
-    let respuesta = navParams.get('respuesta');
     this.contador = contador;
-    this.respuesta = respuesta;
+    let usuario = navParams.get('usuario');
+    this.usuario = usuario;
   
     if(this.contador == null){
       this.contador= 0;
@@ -29,7 +29,6 @@ export class AboutPage {
   verJugadas(valor){
     this.navCtrl.push(Jugadas, {
       contador: this.contador,
-      respuesta: this.respuesta,
     });
   }
 
