@@ -1,0 +1,32 @@
+page-jugadas {
+  .back-color {
+  background-color:#DFACD9;
+  }
+  .title-font {
+  color:#841B78; 
+  font-size: 28px; 
+  font-family: 'Signika', sans-serif; 
+  padding-bottom: 10px;
+  }
+  .back-title {
+  background-color:#DFACD9;
+  }
+  .button-inner {
+  flex-flow: column;
+  }
+  .button-color {
+  background-color:#F6F397; 
+  color:#660D5A;
+  font-weight: bold;
+  }
+  .button-color2 {
+  background-color:#660D5A; 
+  }
+  .resultados {
+  color:#220523; 
+  font-size: 22px; 
+  background-color:#DFACD9; 
+  padding-bottom: 25px;
+  padding-left: 30px;
+  }
+}

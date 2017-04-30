@@ -13,23 +13,29 @@ import { AboutPage } from '../about/about'
 export class TriviaTres {
 
   contador: any = null;
+  respuesta: any= null;
 
   constructor(public navCtrl: NavController, private vibration: Vibration, private navParams: NavParams) {
     let contador = navParams.get('contador');
+    let respuesta = navParams.get('respuesta');
     this.contador = contador;
+    this.respuesta = respuesta;
   }
 
   pasarPregunta(valor){
 
   if(valor != "cambia de color"){
-    this.vibration.vibrate(600);
+    this.vibration.vibrate([200,100,200]);
+    this.respuesta= valor;
   } else {
-    this.vibration.vibrate(200);
+    this.vibration.vibrate(300);
+    this.respuesta= valor;
     this.contador++;
   }
 
   this.navCtrl.push(AboutPage, {
       contador: this.contador,
+      respuesta: this.respuesta,
     });
   }
 

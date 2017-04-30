@@ -22,6 +22,8 @@ Login(){
 if(this.usuario != "" && this.clave != "")
 {
   this.navCtrl.push(TabsPage);
+} else {
+  alert("Ingrese usuario y clave");
 }
 
 }

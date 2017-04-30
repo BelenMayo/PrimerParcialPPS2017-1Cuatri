@@ -14,6 +14,8 @@ import { LoginPage } from '../pages/login/login';
 import { TriviaUno } from '../pages/trivia1/trivia1';
 import { TriviaDos } from '../pages/trivia2/trivia2';
 import { TriviaTres } from '../pages/trivia3/trivia3';
+import { Jugadas } from '../pages/jugadas/jugadas';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -39,6 +41,7 @@ export const firebaseConfig = {
     TriviaUno,
     TriviaDos,
     TriviaTres,
+    Jugadas,
     TabsPage
   ],
   imports: [
@@ -56,6 +59,7 @@ export const firebaseConfig = {
     TriviaUno,
     TriviaDos,
     TriviaTres,
+    Jugadas,
     LoginPage
   ],
   providers: [
@@ -63,6 +67,7 @@ export const firebaseConfig = {
     SplashScreen,
     Vibration,
     Flashlight,
+    NativeAudio,
     AngularFireModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
