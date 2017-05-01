@@ -15,18 +15,27 @@ import { TriviaUno } from '../trivia1/trivia1'
 })
 export class HomePage {
 
+  usuarioFB:  FirebaseListObservable<any>;
   usuario: string= null;
 
   constructor(public navCtrl: NavController, private vibration: Vibration, public database: AngularFireDatabase, 
     private navParams: NavParams) {
-      let usuario = navParams.get('usuario');
-      this.usuario= "Fernando";
+      this.usuarioFB = this.database.list('/usuarioFB')
+
+      var traerPreg = this.database.list("/usuarioFB").subscribe(valor => {
+      valor.forEach(v =>{
+
+      });
+        this.usuario= valor[0].usuario;
+      });
+
+      console.log(this.usuario);
   }
 
   pasarPregunta(){
   this.vibration.vibrate(200);
-  this.navCtrl.push(TriviaUno, {
-      usuario: this.usuario,
-    });
+    this.navCtrl.push(TriviaUno, {
+        usuario: this.usuario,
+      });
   }
 }

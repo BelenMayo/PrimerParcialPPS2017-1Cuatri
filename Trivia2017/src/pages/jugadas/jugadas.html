@@ -13,9 +13,10 @@
 
         <ion-list>
 
-      <ion-item-sliding *ngFor='let task of tasks | async'>
+      <ion-item-sliding *ngFor='let juegos of jugadas | async'>
         <ion-item>
-          <ion-label>{{ jugada.title }}</ion-label>
+          <ion-label>{{ juegos.usuario }}</ion-label>
+          <ion-label>{{ juegos.jugada }}</ion-label>
         </ion-item>
       </ion-item-sliding>
      </ion-list>
