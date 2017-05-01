@@ -26,6 +26,8 @@ export class TriviaUno {
       this.jugadas = this.database.list('/jugadas');
       let usuario = navParams.get('usuario');
       this.usuario= usuario;
+      this.nativeAudio.preloadSimple('incorrecto', 'assets/sound/incorrecto.mp3');
+      this.nativeAudio.preloadSimple('correcto', 'assets/sound/correcto.mp3');
   }
 
   pasarPregunta(valor){
@@ -36,15 +38,11 @@ export class TriviaUno {
       });
 
   if(valor != "perro"){
+    this.nativeAudio.play('incorrecto',() => console.log("Incorrecto"));
     this.vibration.vibrate([200,100,200]);
-    //this.nativeAudio.preloadSimple('melodia', './assets/sound/sonido.mp3')
-    //this.nativeAudio.preloadComplex('uniqueId2', 'path/to/file2.mp3', 1, 1, 0).then(this.onSuccess, this.onError);
-    //this.nativeAudio.play('melodia')
   } else {
+    this.nativeAudio.play('correcto', () => console.log("Correcto"));
     this.vibration.vibrate(300);
-    //this.nativeAudio.preloadSimple('melodia', './assets/sound/sonido.mp3')
-    //this.nativeAudio.preloadComplex('uniqueId2', 'path/to/file2.mp3', 1, 1, 0).then(this.onSuccess, this.onError);
-    //this.nativeAudio.play('melodia');
     this.contador++;
   }
   
