@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="">
     <ion-title>
-      Estadísticas
+      Jugadas
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,11 +11,15 @@
         <strong>Resultados</strong><br>
       </ion-item>
 
-        <strong class="resultados">Acertaste {{contador}} de 3 preguntas</strong><br><br>
-      
-      <button class="button-inner  button-color" ion-button danger (click)="verJugadas()">
-          Ver últimas jugadas
-      </button><br>
+        <ion-list>
+
+      <ion-item-sliding *ngFor='let juegos of jugadas | async'>
+        <ion-item>
+          <ion-label>{{ juegos.usuario }}</ion-label>
+          <ion-label>{{ juegos.jugada }}</ion-label>
+        </ion-item>
+      </ion-item-sliding>
+     </ion-list>
 
       <button class="button-inner  button-color2" ion-button danger (click)="volverAJugar()">
           Volver a jugar!!
