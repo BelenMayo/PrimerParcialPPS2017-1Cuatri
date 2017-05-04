@@ -4,9 +4,9 @@ page-piano {
   }
   .title-font {
   color: #124E0F; 
-  font-size: 28px; 
+  font-size: 26px; 
   font-family: 'Signika', sans-serif; 
-  padding-bottom: 5px; ;
+  padding-left: 40px;
   }
   .button-inner {
   flex-flow: column;
@@ -15,8 +15,10 @@ page-piano {
   background-color:#0E9307;
   }
   .button-style {
-      border-radius: 8px 8px 8px 8px;
+  border-radius: 8px 8px 8px 8px;
   }
-
+  .button-label {
+  padding-top: 40px;
+  }
 
 }
