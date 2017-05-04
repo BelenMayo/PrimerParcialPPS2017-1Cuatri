@@ -7,14 +7,16 @@
 </ion-header>
 
 <ion-content class="back-color" padding>
-        <ion-item class= "title-font back-color">
-        <strong>¿Piedra, Papel o Tijera?</strong>
+    <ion-item class= "title-font back-color">
+    <strong>¿Piedra, Papel o Tijera?</strong>
         </ion-item>
-
-        <input type=image src="./assets/image/Piedra.jpg" class="button-style" width="106" height="106" id="opcion1"value="Piedra"(click)="pasarJugada('Piedra')">
-
-        <input type=image src="./assets/image/Papel.jpg" class="button-style" width="106" height="106" id="opcion1"value="Papel"(click)="pasarJugada('Papel')">
-
-        <input type=image src="./assets/image/Tijera.jpg" class="button-style" width="106" height="106" id="opcion1"value="Tijera"(click)="pasarJugada('Tijera')">
-
+          <label style= "padding-left: 110px;">
+            <input type=image src="./assets/image/Piedra.jpg" class="button-style" width="125" height="125" id="opcion1"value="Piedra"(click)="jugar('Piedra')"><br>
+          </label>
+          <label style= "padding-left: 110px;">
+            <input type=image src="./assets/image/Papel.jpg" class="button-style" width="125" height="125" id="opcion1"value="Papel"(click)="jugar('Papel')"><br>
+          </label>
+          <label style= "padding-left: 110px;">  
+            <input type=image src="./assets/image/Tijera.jpg" class="button-style" width="125" height="125" id="opcion1"value="Tijera"(click)="jugar('Tijera')">
+          </label>
 </ion-content>

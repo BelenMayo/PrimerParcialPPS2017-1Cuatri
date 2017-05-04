@@ -13,7 +13,7 @@ export class LoginPage {
 
 usuario: string= null;
 titulo: string= "Atención"
-mensaje:string= "Ingrese usuario y contraseña"
+mensaje: string= "Ingrese usuario y contraseña"
 
 usuarioFB: FirebaseListObservable<any>;
 
