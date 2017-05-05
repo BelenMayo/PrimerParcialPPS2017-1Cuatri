@@ -7,7 +7,7 @@ page-ppt1 {
   font-size: 22px; 
   font-family: 'Signika', sans-serif; 
   padding-bottom: 10px;
-  padding-left: 40px;
+  padding-left: 50px;
   }
   .button-inner {
   flex-flow: column;
@@ -17,5 +17,7 @@ page-ppt1 {
   }
   .button-style {
       border-radius: 8px 8px 8px 8px;
+      box-shadow: 0 2px #666;
+      transform: translate(4px);
   }
 }

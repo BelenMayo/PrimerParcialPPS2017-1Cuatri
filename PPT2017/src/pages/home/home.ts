@@ -24,7 +24,8 @@ export class HomePage {
       valor.forEach(v =>{
 
       });
-        this.usuario= valor[0].usuario;
+        //this.usuario= valor[0].usuario;
+        this.usuario= valor[valor.length-1].usuario;
       });
 
       console.log(this.usuario);

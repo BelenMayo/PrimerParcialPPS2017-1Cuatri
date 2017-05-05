@@ -31,6 +31,7 @@ export class PPT1 {
       this.usuario= usuario;
       this.nativeAudio.preloadSimple('incorrecto', 'assets/sound/incorrecto.mp3');
       this.nativeAudio.preloadSimple('correcto', 'assets/sound/correcto.mp3');
+      this.nativeAudio.preloadSimple('empate', 'assets/sound/empate.mp3');
   }
 
 
@@ -45,7 +46,7 @@ jugar(valor){
       if(valor == ("Piedra")){
         switch(this.eleccionMaquina) {
           case 1:
-            this.mensaje= "Hubo un empate!! La maquina habia seleccionado Piedra."
+            this.mensaje= "Hubo un EMPATE!! La máquina había seleccionado Piedra."
                   let ventana = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -60,10 +61,12 @@ jugar(valor){
 
                   });
                   ventana.present(ventana);
+            this.nativeAudio.play('empate', () => console.log("empate"));
+            this.vibration.vibrate(100);
             this.contadorDeEmpates++;
             break;
           case 2:
-            this.mensaje= "Perdiste!! La maquina habia seleccionado Papel.";
+            this.mensaje= "PERDISTE!! La máquina había seleccionado Papel.";
                   let ventana2 = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -83,7 +86,7 @@ jugar(valor){
             this.contadorDePerdidas++;
             break;
           case 3:
-          this.mensaje= "Ganaste!! La maquina habia seleccionado Tijera.";
+          this.mensaje= "GANASTE!! La máquina había seleccionado Tijera.";
                   let ventana3 = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -108,7 +111,7 @@ jugar(valor){
       if(valor == ("Papel")){
         switch(this.eleccionMaquina) {
           case 1:     
-          this.mensaje= "Ganaste!! La maquina habia seleccionado Piedra.";
+          this.mensaje= "GANASTE!! La máquina había seleccionado Piedra.";
                 let ventana = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -128,7 +131,7 @@ jugar(valor){
             this.contadorDeGanadas++;
             break;
           case 2:
-          this.mensaje= "Hubo un empate!! La maquina habia seleccionado Papel.";
+          this.mensaje= "Hubo un EMPATE!! La máquina había seleccionado Papel.";
                   let ventana2 = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -143,10 +146,12 @@ jugar(valor){
 
                   });
                   ventana2.present(ventana2);
+            this.nativeAudio.play('empate', () => console.log("empate"));
+            this.vibration.vibrate(100);
             this.contadorDeEmpates++;
             break;
           case 3:
-          this.mensaje= "Perdiste!! La maquina habia seleccionado Tijera.";
+          this.mensaje= "PERDISTE!! La máquina había seleccionado Tijera.";
                   let ventana3 = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -171,7 +176,7 @@ jugar(valor){
       if(valor == ("Tijera")){
         switch(this.eleccionMaquina) {
           case 1:
-            this.mensaje= "Perdiste!! La maquina habia seleccionado Piedra.";
+            this.mensaje= "PERDISTE!! La máquina había seleccionado Piedra.";
                   let ventana = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -191,7 +196,7 @@ jugar(valor){
             this.contadorDePerdidas++;
             break;
           case 2:
-          this.mensaje= "Ganaste!! La maquina habia seleccionado Papel.";
+          this.mensaje= "GANASTE!! La máquina había seleccionado Papel.";
                   let ventana2 = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -211,7 +216,7 @@ jugar(valor){
             this.contadorDeGanadas++;
             break;
           case 3:
-          this.mensaje= "Hubo un empate!! La maquina habia seleccionado Tijera.";
+          this.mensaje= "Hubo un EMPATE!! La máquina había seleccionado Tijera.";
                   let ventana3 = this.alertCtrl.create({
                   title: this.titulo,
                   message: this.mensaje,
@@ -226,6 +231,8 @@ jugar(valor){
 
                   });
                   ventana3.present(ventana3);
+            this.nativeAudio.play('empate', () => console.log("empate"));
+            this.vibration.vibrate(100);
             this.contadorDeEmpates++;
             break; 
         }

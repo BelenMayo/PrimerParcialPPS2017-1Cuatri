@@ -34,19 +34,42 @@ export class AboutPage {
     this.contadorDeGanadas = contadorDeGanadas;
     this.contadorDePerdidas= contadorDePerdidas;
 
-      if(this.contadorDeEmpates == 2){
+      if(this.contadorDeEmpates >= 2){
           this.resultadoJuego= "Empatado";
       }
-      if(this.contadorDeGanadas == 2){
+      else if(this.contadorDeGanadas >= 2){
           this.resultadoJuego= "Ganado";
       }
-      if(this.contadorDePerdidas == 2){
+      else if(this.contadorDePerdidas >= 2){
           this.resultadoJuego= "Perdido";
       }
+      else{
+          this.resultadoJuego= "Empatado";
+      }
 
+      var hoy = new Date();
+      var dd = hoy.getDate();
+      var mm = hoy.getMonth()+1; 
+      var yyyy = hoy.getFullYear();
+      var fecha:string;
+
+      if(dd<10) {
+        fecha ='0'+ dd + "/"
+      } 
+      else
+        fecha = dd + "/"
+      if(mm<10) {
+        fecha= fecha + '0' + mm + "/"
+      } 
+      else
+        fecha = fecha + mm + "/"
+
+      fecha = fecha + yyyy;
+      
         this.resultados.push({
-            resultado: this.resultadoJuego,
             usuario: this.usuario,
+            resultado: this.resultadoJuego,
+            fecha: fecha,
         });
    }
 
