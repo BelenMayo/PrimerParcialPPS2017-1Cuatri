@@ -12,24 +12,20 @@ import { HomePage } from '../home/home';
 })
 export class Jugadas {
 
-  contador: any = null;
+  resultadoJuego: any = null;
   usuario: any= null;
 
-  jugadas: FirebaseListObservable<any>;
+  resultados: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,
     public database: AngularFireDatabase, private vibration: Vibration, private navParams: NavParams) {
-    let contador = navParams.get('contador');
-    this.contador = contador;
+    let resultadoJuego = navParams.get('resultadoJuego');
+    this.resultadoJuego = resultadoJuego;
 
-    this.jugadas = this.database.list('/jugadas')
-
-    if(this.contador == null){
-      this.contador= 0;
-    }
+    this.resultados = this.database.list('/resultados')
   }
 
-  volverAJugar(valor){
+  volverAJugar(){
     this.navCtrl.push(HomePage);
   }
 

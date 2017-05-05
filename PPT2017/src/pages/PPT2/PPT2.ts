@@ -4,7 +4,6 @@ import { Vibration } from '@ionic-native/vibration';
 import { NativeAudio } from '@ionic-native/native-audio';
 import * as $ from 'jquery'
 import { NavParams } from 'ionic-angular';
-import { FirebaseListObservable, AngularFireDatabase  } from 'angularfire2';
 
 import { PPT3 } from '../PPT3/PPT3'
 
@@ -14,9 +13,7 @@ import { PPT3 } from '../PPT3/PPT3'
 })
 export class PPT2 {
 
-  contador: any= null; 
   usuario: any= null;
-  jugadas: FirebaseListObservable<any>;
 
   titulo: string= "Resultado"
   mensaje: string= ""
@@ -27,12 +24,15 @@ export class PPT2 {
   contadorDePerdidas: any= 0;
 
   constructor(public navCtrl: NavController, private vibration: Vibration, public alertCtrl: AlertController,
-    public database: AngularFireDatabase, private navParams: NavParams, private nativeAudio: NativeAudio) {
-    this.jugadas = this.database.list('/jugadas')
-    let contador = navParams.get('contador');
+      private navParams: NavParams, private nativeAudio: NativeAudio) {
     let usuario = navParams.get('usuario');
-    this.contador = contador;
+    let contadorDeEmpates = navParams.get('contadorDeEmpates');
+    let contadorDeGanadas = navParams.get('contadorDeGanadas');
+    let contadorDePerdidas = navParams.get('contadorDePerdidas');
     this.usuario = usuario;
+    this.contadorDeEmpates = contadorDeEmpates;
+    this.contadorDeGanadas = contadorDeGanadas;
+    this.contadorDePerdidas= contadorDePerdidas;
     this.nativeAudio.preloadSimple('incorrecto', 'assets/sound/incorrecto.mp3');
     this.nativeAudio.preloadSimple('correcto', 'assets/sound/correcto.mp3');
   }
@@ -235,13 +235,7 @@ jugar(valor){
         }
       }
 
-        this.jugadas.push({
-            jugada: valor,
-            usuario: this.usuario,
-        });
-
         this.navCtrl.push(PPT3, {
-            contador: this.contador,
             usuario: this.usuario,
             contadorDeEmpates: this.contadorDeEmpates,
             contadorDeGanadas: this.contadorDeGanadas,

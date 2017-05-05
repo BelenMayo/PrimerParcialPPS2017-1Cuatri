@@ -16,7 +16,6 @@ export class PPT1 {
 
   contador: any= null; 
   usuario: any= null;
-  jugadas: FirebaseListObservable<any>;
 
   titulo: string= "Resultado"
   mensaje: string= ""
@@ -27,8 +26,7 @@ export class PPT1 {
   contadorDePerdidas: any= 0;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private navParams: NavParams,
-    public database: AngularFireDatabase, private vibration: Vibration, private nativeAudio: NativeAudio) {
-      this.jugadas = this.database.list('/jugadas');
+        private vibration: Vibration, private nativeAudio: NativeAudio) {
       let usuario = navParams.get('usuario');
       this.usuario= usuario;
       this.nativeAudio.preloadSimple('incorrecto', 'assets/sound/incorrecto.mp3');
@@ -233,13 +231,7 @@ jugar(valor){
         }
       }
 
-        this.jugadas.push({
-            jugada: valor,
-            usuario: this.usuario,
-        });
-
         this.navCtrl.push(PPT2, {
-            contador: this.contador,
             usuario: this.usuario,
             contadorDeEmpates: this.contadorDeEmpates,
             contadorDeGanadas: this.contadorDeGanadas,

@@ -17,7 +17,6 @@ export class PPT3 {
 
   contador: any= null; 
   usuario: any= null;
-  jugadas: FirebaseListObservable<any>;
 
   titulo: string= "Resultado"
   mensaje: string= ""
@@ -27,13 +26,16 @@ export class PPT3 {
   contadorDeGanadas: any= 0;
   contadorDePerdidas: any= 0;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public database: AngularFireDatabase, 
-  private vibration: Vibration, private navParams: NavParams, private nativeAudio: NativeAudio) {
-    this.jugadas = this.database.list('/jugadas')
-    let contador = navParams.get('contador');
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private vibration: Vibration, 
+      private navParams: NavParams, private nativeAudio: NativeAudio) {
     let usuario = navParams.get('usuario');
-    this.contador = contador;
+    let contadorDeEmpates = navParams.get('contadorDeEmpates');
+    let contadorDeGanadas = navParams.get('contadorDeGanadas');
+    let contadorDePerdidas = navParams.get('contadorDePerdidas');
     this.usuario = usuario;
+    this.contadorDeEmpates = contadorDeEmpates;
+    this.contadorDeGanadas = contadorDeGanadas;
+    this.contadorDePerdidas= contadorDePerdidas;
     this.nativeAudio.preloadSimple('correcto', 'assets/sound/correcto.mp3');
     this.nativeAudio.preloadSimple('incorrecto', 'assets/sound/incorrecto.mp3');
   }
@@ -235,13 +237,7 @@ jugar(valor){
         }
       }
 
-        this.jugadas.push({
-            jugada: valor,
-            usuario: this.usuario,
-        });
-
         this.navCtrl.push(AboutPage, {
-            contador: this.contador,
             usuario: this.usuario,
             contadorDeEmpates: this.contadorDeEmpates,
             contadorDeGanadas: this.contadorDeGanadas,
